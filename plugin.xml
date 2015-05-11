@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+        id="de.actionbound.plugins.CheckAuthorization"
+        version="1.3.1">
+
+  <name>Check Authorization</name>
+    
+  <description>
+    Check access to geolocation and camera (iOS8+), and link to settings, from your cordova app.
+  </description>
+  <license>MIT</license>
+  <keywords>phonegap,ios,ios8,camera,authorization,settings</keywords>
+
+  <js-module src="www/checkauth.js" name="CheckAuthorization">
+    <merges target="window.plugins.checkAuthorization" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CheckAuthorization">
+        <param name="ios-package" value="CDVCheckAuthorization"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CDVCheckAuthorization.h" />
+    <source-file src="src/ios/CDVCheckAuthorization.m" />
+  </platform>
+
+  <platform name="android">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CheckAuthorization">
+          <param name="android-package" value="de.actionbound.plugins.CheckAuthorization"/>
+      </feature>      
+    </config-file>
+    <source-file src="src/android/CheckAuthorization.java" target-dir="src/de/actionbound/plugins" />
+  </platform>
+</plugin>
