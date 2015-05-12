@@ -9,7 +9,7 @@ module.exports = {
     cordova.exec(success, fail, 'CheckAuthorization', 'checkCameraAuthorization', ["", ""]);
   },
 
-  checkGeolocationAuthorization: function(success, fail)  {
-  	cordova.exec(success, fail, 'CheckAuthorization', 'checkGeolocationAuthorization', ["", ""]);
+  checkGeolocationAuthorization: function(gps_required, success, fail)  {
+    cordova.exec(success, fail, 'CheckAuthorization', 'checkGeolocationAuthorization', [gps_required, ""]);
   }
 }
