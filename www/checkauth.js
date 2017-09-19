@@ -11,5 +11,9 @@ module.exports = {
 
   checkGeolocationAuthorization: function(gps_required, success, fail)  {
     cordova.exec(success, fail, 'CheckAuthorization', 'checkGeolocationAuthorization', [gps_required, ""]);
+  },
+
+  checkSplitView: function(success, fail) {
+    cordova.exec(success, fail, 'CheckAuthorization', 'checkSplitView')
   }
 }

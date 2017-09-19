@@ -65,6 +65,17 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void) checkSplitView:(CDVInvokedUrlCommand*)command; {
+    __block CDVPluginResult* pluginResult = nil;
+    if(CGRectEqualToRect([UIApplication sharedApplication].delegate.window.frame, [UIApplication sharedApplication].delegate.window.screen.bounds)) {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:false];
+    }
+    else {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:false];
+    }
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 #pragma mark - PRIVATE METHODS
 
 @end
